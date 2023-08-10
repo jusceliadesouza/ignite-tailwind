@@ -2,7 +2,7 @@ import { LuBarChart, LuCheckSquare, LuCog, LuFlag, LuFolders, LuHome, LuLifeBuoy
 
 import { Logo } from './Logo'
 
-import * as Input from '../Input'
+import * as Input from '../Form/Input'
 import { NavItem } from './NavItem'
 import { Profile } from './Profile'
 import { UsedSpaceWidget } from './UsedSpaceWidget'
