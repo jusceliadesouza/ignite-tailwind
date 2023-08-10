@@ -15,7 +15,7 @@ export function FileList() {
             key={file.name}
             className="group flex items-start gap-4 rounded-lg border border-zinc-200 p-4"
           >
-            <div className="rounded-full border-4 bg-violet-100 bg-violet-100 text-violet-600">
+            <div className="rounded-full border-4 bg-violet-100 text-violet-600">
               <LuUploadCloud className="h-4 w-4" />
             </div>
 
