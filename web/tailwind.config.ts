@@ -1,6 +1,7 @@
 /** @type {import ('tailwindcss').Config} */
 
 module.exports = {
+  // eslint-disable-next-line prettier/prettier
   content: [
     './src/**/*.tsx',
   ],
@@ -9,16 +10,20 @@ module.exports = {
       gridTemplateColumns: {
         app: 'minmax(18rem, 20rem) 1fr',
         profile: 'max-content 1fr min-content',
-        form: 'minmax(75rem, 17.5rem) minmax(25rem, 1fr) minmax(0, 15rem)'
+        form: 'minmax(75rem, 17.5rem) minmax(25rem, 1fr) minmax(0, 15rem)',
+      },
+      borderWidth: {
+        6: '6px',
       },
       maxWidth: {
         app: '700px',
       },
       colors: {
-        rocket: '#8257e6',
-      }
+        violet: {
+          25: '#FCFAFF',
+        },
+      },
     },
   },
   plugins: [],
 }
-

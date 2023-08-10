@@ -1,18 +1,16 @@
-import * as Input from "@/components/Input";
-import { SettingTags } from "@/components/SettingTabs";
-import { LuMail } from "react-icons/lu";
+import * as Input from '@/components/Input'
+import { SettingTags } from '@/components/SettingTabs'
+import { LuMail, LuUploadCloud, LuUser } from 'react-icons/lu'
 
 export default function Home() {
   return (
     <>
-      <h1 className="text-3xl font-medium text-zinc-900">
-        Settings
-      </h1>
+      <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
 
       <SettingTags />
 
       <div className="mt-6 flex flex-col">
-        <div className="flex justify-between items-center pb-5 border-b border-zinc-200">
+        <div className="flex items-center justify-between border-b border-zinc-200 pb-5">
           <div className="space-y-1">
             <h2 className="text-lg font-medium text-zinc-900">Personal info</h2>
             <span>Update your photo and personal details here.</span>
@@ -21,14 +19,14 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              className="rounded-lg px-4 py-2 text-sm font-semibold shadow-sm border border-zinc-300 text-zinc-700 hover:bg-zinc-50"
+              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 shadow-sm hover:bg-zinc-50"
             >
               Cancel
             </button>
 
             <button
               type="submit"
-              className="rounded-lg px-4 py-2 text-sm font-semibold shadow-sm bg-violet-600 text-white hover:bg-violet-700"
+              className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-700"
               form="settings"
             >
               Save
@@ -36,8 +34,11 @@ export default function Home() {
           </div>
         </div>
 
-        <form id="settings" className="mt-6 flex flex-col w-full gap-5 divide-y divide-zinc-200">
-        <div className="grid grid-cols-form gap-3">
+        <form
+          id="settings"
+          className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
+        >
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="firstName"
               className="text-sm font-medium text-zinc-700"
@@ -76,7 +77,7 @@ export default function Home() {
 
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
-              htmlFor="email"
+              htmlFor="photo"
               className="text-sm font-medium text-zinc-700"
             >
               Your photo
@@ -84,7 +85,35 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div />
+            <div className="flex items-start gap-5">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
+                <LuUser className="h-8 w-8 text-violet-500 " />
+              </div>
+
+              <label
+                htmlFor="photo"
+                className="group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:bg-violet-25 hover:text-violet-500"
+              >
+                <div className="rounded-full border-6 border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100">
+                  <LuUploadCloud className="h-5 w-5 text-zinc-600 group-hover:text-violet-600" />
+                </div>
+
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-sm">
+                    <span className="text-bold text-violet-700">
+                      Click to upload
+                    </span>{' '}
+                    or drag and drop
+                  </span>
+
+                  <span className="text-xs">
+                    SVG, PNG, JPG or GIF (max. 800x400px)
+                  </span>
+                </div>
+              </label>
+
+              <input type="file" className="sr-only" id="photo" />
+            </div>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
